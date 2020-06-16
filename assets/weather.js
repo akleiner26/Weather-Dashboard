@@ -1,12 +1,14 @@
-var passText = document.getElementById("inputPassword");
-var searchBtn = document.getElementById("searchBtn");
-var mainTxt = document.getElementById("mainBody");
-var daily = document.getElementById("daily");
-var citiesSec = document.getElementById("cities");
-var citiesList = document.getElementById("citiesList")
+var passText = $("#inputPassword");
+var searchBtn = $("#searchBtn");
+var mainTxt = $("#mainBody");
+var daily = $("#daily");
+var citiesSec = $("#cities");
+var citiesList = $("#citiesList")
 var cities = [];
 var APIKey = "1185a689f92365d49ec83f25a53f8191";
-cityName = "";
+var lon;
+var lat;
+var cityName = "";
 mainBodyObj = {
     cityName : " ",
     date : "",
@@ -15,7 +17,15 @@ mainBodyObj = {
     windSpd: "",
     UV: "",
 }
-var currentQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=Philadelphia&appid=" + APIKey
+citiesObj = {
+    current: "",
+    second: "",
+    third:"",
+    fourth: "",
+    fifth: "",
+}
+var currentQueryURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=" + APIKey
+// var UVQueryURL = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude={part}&appid="+APIKey    
 
 function renderCities(){
     for (i = cities.length; i < cities.length; i--){
@@ -46,17 +56,44 @@ function renderMain(){
     var windPar = $("<p>");
     currentWind = current.wind.speed
     windPar.value = currentWind + " MPH"
+
+    return cityName;
 }
 
-$.ajax({
-    url: currentQueryURL,
-    method: "GET"
-}).then(function(current){
-   $(searchBtn).on("click", function(){
-    cities.push(passText.value)
-    cityName
-}) 
+function renderUV(){
+    var UVPar = $("<p>");
+    currentUV = UV.current.uvi
+    UVPar.value = currentUV
+}
+
+searchBtn.on("click", function(){
+    console.log("I was pressed");
+    cities.push(passText.val());
+    mainTxt.setAttribute("display","block");
+    citiesList.setAttribute("display","block");
+    cityName=passText.val();
+
+    $.ajax({
+        url: currentQueryURL,
+        method: "GET"
+    }).then(function(current){
+        renderMain();
+        renderCities();
+     lon = current.lon;
+     lat = current.lat;
+    }) 
 })
+
+
+
+// $.ajax({
+//     url: UVQueryURL,
+//     method: "GET"
+// }).then (function(UV){
+//     $(searchBtn).on("click", function(){
+//         renderUV();
+//     })
+// })
 
 
 
