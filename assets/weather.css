@@ -12,7 +12,7 @@ body{
     border-width: thin;
     border-radius: 25px;
     padding: auto;
-    /* display: none; */
+    display: none;
 }
 
 .txtCenter{

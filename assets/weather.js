@@ -29,8 +29,6 @@ citiesObj = {
     fourth: "",
     fifth: "",
 }
-// var currentQueryURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=" + APIKey
-// var UVQueryURL = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude={part}&appid="+APIKey    
 
 const makeUrl = (city) => {
     var currentQueryURL =
@@ -55,7 +53,7 @@ const makeUrl = (city) => {
     $("#fiveRow").empty();
     fiveDay.forEach(day =>{
         const html = `<div class="card border-dark mb-3" id="dayOne" style="max-width: 18rem;">
-        <h4 id="date">${day.dt_txt}</h4>
+        <h4 id="date">${day.dt_txt.substring(0,9)}</h4>
         <img class = "dayIcon" src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png">
         <p>Temp: ${kelvToFar(day.main.temp).toFixed(0)}</p>
         <p>Humidity: ${day.main.humidity}</p>
@@ -116,19 +114,17 @@ function renderMain(current){
 function renderUV(UVVal){
     const html = `<p class="UV">UV Index: <span id="UVNum">${UVVal}</span></p>`
     $(mainBody).append(html);
-    // if (UVVal <= 2) {
-    //     html.addClass("low");
-    // } else if (UVVal > 2 && UVVal <= 5){
-    //     html.addClass("moderate");
-    // } else if (UVVal > 5 && UVVal <= 7){
-    //     html.addClass("high");
-    // } else html.addClass("very high")
-}      
+    var UVhtml = $(".UV")
+    console.log(UVVal);
+    if (UVVal <= 2) {
+        UVhtml.addClass("low");
+    } else if (UVVal > 2 && UVVal <= 5){
+        UVhtml.addClass("moderate");
+    } else if (UVVal > 5 && UVVal <= 7){
+        UVhtml.addClass("high");
+    } else UVhtml.addClass("veryHigh")
+}    
 
-// function renderDaily(){
-//     var headOne = $("<h4>");
-//     dayOneDate = 
-// }
 
 searchBtn.on("click", function(){
     cityName=passText.val();
