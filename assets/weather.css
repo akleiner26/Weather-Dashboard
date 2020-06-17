@@ -12,9 +12,54 @@ body{
     border-width: thin;
     border-radius: 25px;
     padding: auto;
-    display: none;
+    /* display: none; */
 }
 
 .txtCenter{
     text-align: center;
+}
+
+.card{
+    width: 150px;
+    height: 175px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.dayIcon{
+    width: 40px;
+    height: 40px;
+}
+
+#daily{
+    padding: 15px;
+}
+
+.cityBtn{
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(173, 173, 173, 0.507);
+    padding: 5px 100px 5px 50px;
+    margin: 10px;
+    margin-left: 15px;
+}
+
+#citiesList{
+    padding-left: 0px;
+}
+
+.low{
+    background-color: green;
+}
+
+.moderate{
+    background-color: yellow;
+}
+
+.high {
+    background-color: orange;
+}
+
+.veryHigh{
+    background-color: red;
 }
