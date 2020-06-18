@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Weather Dashboard</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/weather.css" type="text/css">
 </head>
+
 <body>
 	<header class="row backColor" id="header">
 		<h1 class="col-12 headerText txtCenter" id="pageTitle">Weather Dashboard</h1>
@@ -18,31 +21,32 @@
 				<section class="form-group mx-sm-3 mb-2">
 					<input type="text" class="form-control col-12" id="inputPassword" placeholder="City Name">
 				</section>
-				  <button type="submit" class="btn backColor ml-3 col-10" id="searchBtn">Search</button>
-				  <section class="cell col-10 m-3" id="cities">
-					  <section class="row">
-					  <ul id="citiesList">
-					  </ul>
+				<button type="submit" class="btn backColor ml-3 col-10" id="searchBtn">Search</button>
+				<section class="cell citiesContainer col-10 mt-3 ml-1" id="cities">
+					<section class="row citiesContainer">
+						<ul class="citiesContainer" id="citiesList">
+						</ul>
 					</section>
-				  </section>
-			</section>
-			<section class="col-9" id="rightAside">
-			<section class="cell col-11" id="mainBody"></section>
-			<section class="cell col-11 mt-3" id="daily">
-				<section id="fiveRow" class="row">
-				<div class="card border-dark mb-3 col-2" id="dayOne" style="max-width: 18rem;">
-					<h4 id="date">6/16/2020</h4>
-					<img src="">
-					<p>temp 50 deg</p>
-					<p>humidity</p>
-				</div>
 				</section>
 			</section>
-		</section>
+			<section class="col-9" id="rightAside">
+				<section class="cell col-11" id="mainBody"></section>
+				<section class="cell col-11 mt-3" id="daily">
+					<section id="fiveRow" class="row">
+						<div class="card border-dark mb-3 col-2" id="dayOne" style="max-width: 18rem;">
+							<h4 id="date">6/16/2020</h4>
+							<img src="">
+							<p>temp 50 deg</p>
+							<p>humidity</p>
+						</div>
+					</section>
+				</section>
+			</section>
 		</section>
 	</main>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="assets/weather.js"></script>
 </body>
+
 </html>

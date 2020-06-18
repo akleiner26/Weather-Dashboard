@@ -60,3 +60,17 @@ body{
 .veryHigh{
     background-color: red;
 }
+
+.citiesContainer{
+    min-width: 125px;
+}
+
+@media screen and (min-width: 575px){
+    .citiesContainer{
+        margin-left: 3;
+    }
+}
+
+.card{
+    width: 135px;
+}

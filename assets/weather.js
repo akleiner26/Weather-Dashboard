@@ -32,8 +32,6 @@ citiesObj = {
     fifth: "",
 }
 
-
-
 const makeUrl = (city) => {
     var currentQueryURL =
         'https://api.openweathermap.org/data/2.5/weather?q=' +
@@ -42,7 +40,6 @@ const makeUrl = (city) => {
         APIKey;
     return currentQueryURL;
 };
-
 
 const makeUVUrl = (lon, lat) => {
     var UVQueryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`
@@ -68,7 +65,6 @@ const renderFiveDay = (fiveDay) => {
 }
 
 if (cities.length !== 0) {
-    console.log(cities[cities.length - 1]);
     var cityName = cities[cities.length - 1];
     mainTxt.style.display = "block";
     citiesList.style.display = "block";
@@ -84,9 +80,6 @@ function renderCities() {
         $("#citiesList").prepend(html);
         $(".cityBtn").on("click", function (city) {
             cityName = this.getAttribute("data-name");
-            console.log("I was pressed");
-            console.log(cityName);
-            console.log(cities);
             mainTxt.style.display = "block";
             citiesList.style.display = "block";
             citiesSec.style.display = "block";
@@ -99,7 +92,6 @@ function renderCities() {
     }
     )
 }
-
 
 function kelvToFar(temp) {
     return (temp - 273.15) * 1.80 + 32;
@@ -147,7 +139,6 @@ function renderUV(UVVal) {
     const html = `<p id="UVID" class="UV">UV Index: <span id="UVNum">${UVVal}</span></p>`
     $(mainBody).append(html);
     var UVhtml = $(".UV")
-    console.log(UVVal);
     if (UVVal <= 2) {
         UVhtml.addClass("low");
     } else if (UVVal > 2 && UVVal <= 5) {
@@ -157,14 +148,11 @@ function renderUV(UVVal) {
     } else UVhtml.addClass("veryHigh")
 }
 
-
 searchBtn.on("click", function () {
     cityName = passText.val();
     if (!cities.includes(cityName)) {
         cities.push(cityName);
     }
-    console.log(cityName);
-    console.log(cities);
     mainTxt.style.display = "block";
     citiesList.style.display = "block";
     citiesSec.style.display = "block";
