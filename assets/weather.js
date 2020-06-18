@@ -42,12 +42,12 @@ const makeUrl = (city) => {
 };
 
 const makeUVUrl = (lon, lat) => {
-    var UVQueryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`
+    var UVQueryURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${lon}`
     return UVQueryURL;
 }
 
 const fiveDayUrl = () => {
-    var fiveDayQueryUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}`
+    var fiveDayQueryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}`
     return fiveDayQueryUrl;
 }
 
@@ -56,7 +56,7 @@ const renderFiveDay = (fiveDay) => {
     fiveDay.forEach(day => {
         const html = `<div class="card border-dark mb-3" id="dayOne" style="max-width: 18rem;">
         <h4 id="date">${day.dt_txt.substring(0, 9)}</h4>
-        <img class = "dayIcon" src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png">
+        <img class = "dayIcon" src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png">
         <p>Temp: ${kelvToFar(day.main.temp).toFixed(0)}</p>
         <p>Humidity: ${day.main.humidity}</p>
     </div>`
@@ -107,7 +107,7 @@ function renderMain(current) {
     $(textHead).text(cityName + " " + moment().subtract(10, 'days').calendar());
 
     var iconNum = current.weather[0].icon;
-    icons = "http://openweathermap.org/img/wn/" + iconNum + ".png"
+    icons = "https://openweathermap.org/img/wn/" + iconNum + ".png"
     var imageTag = $("<img>").attr("src", icons);
 
 
