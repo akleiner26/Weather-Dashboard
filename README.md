@@ -21,14 +21,14 @@ Andrew Kleiner
 
 ## Site Screenshots
 ### Upon Entering the Site
-<img src = "screenshots/uponEntering.png" alt = "Screenshot of Entering the Site">
+<img src = "/assets/screenshots/uponEntering.png" alt = "Screenshot of Entering the Site">
 
 ### First Search
-<img src = "screenshots/afterSearch.png" alt = "Screenshot of First Search Results">
+<img src = "/assets/screenshots/afterSearch.png" alt = "Screenshot of First Search Results">
 
 ### Second Search
-<img src = "screenshots/searchTwo.png" alt = "Screenshot of Second Search Results">
+<img src = "/assets/screenshots/searchTwo.png" alt = "Screenshot of Second Search Results">
 
 ### Local Storage
-<img src = "screenshots/localStorage.png" alt = "Screenshot of Cities being Saved in Local Storage">
+<img src = "/assets/screenshots/localStorage.png" alt = "Screenshot of Cities being Saved in Local Storage">
 
